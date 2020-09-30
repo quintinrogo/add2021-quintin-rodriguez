@@ -20,9 +20,9 @@
 
         Conectar desde Window Master hacia el Windows Slave.
         Conectar desde GNU/Linux Master hacia el Windows Slave.
-![](imagen02.png)
+![](./imagenes/imagen02.png)
 
     Ir al servidor VNC y usar el comando netstat -n para ver las
     conexiones VNC con el cliente.
 
-![](imagen03.png)
+![](./imagenes/imagen03.png)
