@@ -63,7 +63,7 @@
 ## 6. Uso de SSH como túnel para X
 
 * Instalar en el servidor una aplicación de entorno gráfico (APP1) que no esté en los clientes. Por ejemplo Geany. Si estuviera en el cliente entonces buscar otra aplicación o desinstalarla en el cliente.
-  
+
 * Modificar servidor SSH para permitir la ejecución de aplicaciones gráficas, desde los clientes. Consultar fichero de configuración /etc/ssh/sshd_config (Opción X11Forwarding yes).
 
 * Reiniciar el servicio SSH para que se lean los cambios de configuración.
@@ -89,17 +89,3 @@ Vamos a crear una restricción de uso del SSH para un usuario:
 * /usr/sbin/sshd -t; echo $?, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
 * Comprobar la restricción al acceder desde los clientes.
-
-## 9. Servidor SSH en Windows
-
-
-* Configurar el servidor Windows con los siguientes valores:
-    * SO Windows Server
-    * Nombre de equipo: server08s
-* Añadir en C:\Windows\System32\drivers\etc\hosts el equipo client08g y client08w.
-* Comprobar haciendo ping a ambos equipos.
-* Instalar y configurar el servidor SSH en Windows.
-     * Elegir la opción que se quiera: OpenSSH o integrado.
-* Comprobar acceso SSH desde los clientes Windows y GNU/Linux al servidor SSH Windows.
-    * netstat -n en Windows.
-    * lsof -i -n en GNU/Linux.
