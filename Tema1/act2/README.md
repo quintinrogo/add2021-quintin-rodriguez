@@ -66,6 +66,8 @@
 
 * Modificar servidor SSH para permitir la ejecución de aplicaciones gráficas, desde los clientes. Consultar fichero de configuración /etc/ssh/sshd_config (Opción X11Forwarding yes).
 
+    ![](./imagenes/Screenshot_24.png)
+
 * Reiniciar el servicio SSH para que se lean los cambios de configuración.
 
 Vamos a client08g.
@@ -73,7 +75,12 @@ Vamos a client08g.
 * zypper se APP1,comprobar que no está instalado el programa APP1.
     Vamos a comprobar desde client08g, que funciona APP1(del servidor).
 
+  ![](./imagenes/Screenshot_26.png)
+
 * ssh -X rodriguez1@server08g, nos conectamos de forma remota al servidor, y ahora ejecutamos APP1 de forma remota.
+    ![](./imagenes/Screenshot_28.png)
+
+    ![](./imagenes/Screenshot_27.png)
 
 ## 8.1 Restricción sobre un usuario
 
@@ -89,3 +96,10 @@ Vamos a crear una restricción de uso del SSH para un usuario:
 * /usr/sbin/sshd -t; echo $?, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
 * Comprobar la restricción al acceder desde los clientes.
+  ![](./imagenes/Screenshot_29.png)
+
+  ![](./imagenes/Screenshot_30.png)
+
+  ![](./imagenes/Screenshot_31.png)
+
+  ![](./imagenes/Screenshot_32.png)
