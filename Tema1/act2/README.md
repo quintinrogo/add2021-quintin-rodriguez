@@ -60,6 +60,8 @@
 
     * Desde client08w, SI se pide el password.
 
+    ![](./imagenes/Screenshot_23.png)
+
 ## 6. Uso de SSH como túnel para X
 
 * Instalar en el servidor una aplicación de entorno gráfico (APP1) que no esté en los clientes. Por ejemplo Geany. Si estuviera en el cliente entonces buscar otra aplicación o desinstalarla en el cliente.
