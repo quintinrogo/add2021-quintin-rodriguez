@@ -78,6 +78,7 @@ Vamos a client08g.
   ![](./imagenes/Screenshot_26.png)
 
 * ssh -X rodriguez1@server08g, nos conectamos de forma remota al servidor, y ahora ejecutamos APP1 de forma remota.
+
     ![](./imagenes/Screenshot_28.png)
 
     ![](./imagenes/Screenshot_27.png)
@@ -96,6 +97,7 @@ Vamos a crear una restricción de uso del SSH para un usuario:
 * /usr/sbin/sshd -t; echo $?, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
 * Comprobar la restricción al acceder desde los clientes.
+
   ![](./imagenes/Screenshot_29.png)
 
   ![](./imagenes/Screenshot_30.png)
