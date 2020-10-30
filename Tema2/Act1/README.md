@@ -86,6 +86,10 @@ Vamos a configurar los recursos compartidos de red en el servidor. Podemos hacer
 
   + *more /etc/samba/smb.conf*, consultar el contenido del fichero de configuración.
 
+![](./imagenes/1.png)
+
+![](./imagenes/2.png)
+
 ## 1.6 Usuarios Samba
 
 Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
@@ -97,11 +101,9 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
   * Esto hay que hacerlo para cada uno de los usuarios de Samba.
     pdbedit -L, para comprobar la lista de usuarios Samba.
 
+
+
 ## 1.7 Reiniciar
-
-
-
-
 
   Ahora que hemos terminado con el servidor, hay que recargar los ficheros de configuración del servicio. Esto es, leer los cambios de configuración. Podemos hacerlo por Yast -> Servicios, o usar los comandos: systemctl restart smb y systemctl restart nmb.
 
@@ -128,11 +130,12 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 
 Escribimos \\ip-del-servidor-samba y vemos lo siguiente:
 
-samba-win7-cliente-gui
+![](./imagenes/3.png)
 
 * Acceder al recurso compartido con el usuario invitado
     * net use para ver las conexiones abiertas.
     * net use * /d /y, para borrar todas las conexión SMB/CIFS que se hadn realizado.
+
 * Acceder al recurso compartido con el usuario soldado
     * net use para ver las conexiones abiertas.
     * net use * /d /y, para borrar todas las conexión SMB/CIFS que se hadn realizado.
@@ -142,7 +145,16 @@ samba-win7-cliente-gui
 Comandos para comprobar los resultados:
 
   * smbstatus, desde el servidor Samba.
+
+![](./imagenes/4.png)
+
+![](./imagenes/5.png)
+
+![](./imagenes/6.png)
+
   * lsof -i, desde el servidor Samba.
+
+![](./imagenes/7.png)
 
 ## 2.2 Cliente Windows comandos
 
@@ -158,18 +170,29 @@ Para REVISAR:
 
 * net view, para ver las máquinas (SMB/CIFS) accesibles por la red.
 
+![](./imagenes/8.png)
+
 Montar el recurso barco de forma persistente.
 
 * net use S: \\IP-SERVIDOR-SAMBA\recurso contraseña /USER:usuario /
+
+![](./imagenes/9.png)
 
 * p:yes crear una conexión con el recurso compartido y lo monta en la unidad S. Con la opción /p:yes hacemos el montaje persistente. De modo que se mantiene en cada reinicio de máquina.
 
 * net use, comprobamos.
 
+![](./imagenes/10.png)
+
 Ahora podemos entrar en la unidad S ("s:") y crear carpetas, etc.
 
   * smbstatus, desde el servidor Samba.
+
+![](./imagenes/11.png)
+
   * lsof -i, desde el servidor Samba.
+
+![](./imagenes/12.png)
 
 # 3 Cliente GNU/Linux
 
@@ -186,12 +209,27 @@ Algunas herramientas para acceder a recursos Samba por entorno gráfico: Yast en
 En el momento de autenticarse para acceder al recurso remoto, poner en Dominio el nombre-netbios-del-servidor-samba.
 
 * Probar a crear carpetas/archivos en castillo y en barco.
+
+![](./imagenes/13.png)
+
+![](./imagenes/14.png)
+
 * Comprobar que el recurso public es de sólo lectura.
+
+![](./imagenes/15.png)
 
 Comprobación:
 
 * smbstatus, desde el servidor Samba.
+
+![](./imagenes/16.png)
+
+![](./imagenes/17.png)
 * lsof -i, desde el servidor Samba.
+
+![](./imagenes/18.png)
+
+![](./imagenes/19.png)
 
 ## 3.2 Cliente GNU/Linux comandos
 
@@ -200,15 +238,33 @@ Vamos a un equipo GNU/Linux que será nuestro cliente Samba. Desde este equipo u
 
 Probar desde OpenSUSE: smbclient --list IP-SERVIDOR-SAMBA, muestra los recursos SMB/CIFS de un equipo.
 
+![](./imagenes/21.png)
+
 * Ahora crearemos en local la carpeta /mnt/remotoXX/castillo.
+
+
+
   * mount -t cifs //172.AA.XX.31/castillo /mnt/remotoXX/castillo -o username=soldado1
 
+![](./imagenes/22.png)
 
 * df -hT, para comprobar que el recurso ha sido montado.
 
+![](./imagenes/23.png)
+
 Comprobar
 * smbstatus, desde el servidor Samba.
+
+![](./imagenes/24.png)
+
+![](./imagenes/26.png)
+
 * lsof -i, desde el servidor Samba.
+
+![](./imagenes/27.png)
+
+![](./imagenes/28.png)
+
 
 ## 3.3 Montaje automático
 
@@ -217,6 +273,7 @@ Reiniciar la MV.
 
 df -hT. Los recursos ya NO están montados. El montaje anterior fue temporal.
 
+![](./imagenes/20.png)
 
 * Para configurar acciones de montaje automáticos cada vez que se inicie el equipo, debemos configurar el fichero /etc/fstab. Veamos un ejemplo:
     * //smb-serverXX/public /mnt/remotoXX/public cifs
@@ -224,4 +281,4 @@ df -hT. Los recursos ya NO están montados. El montaje anterior fue temporal.
 
 * Reiniciar el equipo y comprobar que se realiza el montaje automático al inicio.
 
-* Incluir contenido del fichero /etc/fstab en la entrega.
+Al reiniciar el equipo no me permitió iniciar la máquina por un fallo en el archivo de configuración. 
