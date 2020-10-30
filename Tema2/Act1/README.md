@@ -38,19 +38,16 @@ Vamos a GNU/Linux, y creamos los siguientes grupos y usuarios locales:
 
 ## 1.4 Configurar el servidor Samba
 
-cp /etc/samba/smb.conf /etc/samba/smb.conf.bak, hacer una copia de seguridad del fichero de configuración antes de modificarlo.
+* cp /etc/samba/smb.conf /etc/samba/smb.conf.bak, hacer una copia de seguridad del fichero de configuración antes de modificarlo.
 
-  Yast -> Samba Server
+* Yast -> Samba Server
     Workgroup: curso2021
     Sin controlador de dominio. En la pestaña de Inicio definimos
 
-  Iniciar el servicio durante el arranque de la máquina.
+* Iniciar el servicio durante el arranque de la máquina.
 
-  Ajustes del cortafuegos -> Abrir puertos
+* Ajustes del cortafuegos -> Abrir puertos
 
-  Comprobar CORTAFUEGOS
-
-Para descartar un problema del servidor Samba con el cortafuegos, usaremos el comando nmap -Pn IP-servidor-Samba desde otra máquina GNU/Linux. Los puertos SMB/CIFS (139 y 445) deben estar abiertos.
 
 ## 1.5 Crear los recursos compartidos de red
 
@@ -174,7 +171,7 @@ Ahora podemos entrar en la unidad S ("s:") y crear carpetas, etc.
   * smbstatus, desde el servidor Samba.
   * lsof -i, desde el servidor Samba.
 
-## 3 Cliente GNU/Linux
+# 3 Cliente GNU/Linux
 
 Configurar el cliente GNU/Linux.
 Usar nombre y la IP que hemos establecido al comienzo. Configurar el fichero /etc/hosts de la máquina.
