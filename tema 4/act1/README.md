@@ -14,7 +14,7 @@ Parámetro 	Descripción
 
 -H ldap://localhost:389 	IP:puerto del servidor
 
--W 	Se solicita c![](imagenes/3.png)ontraseña
+-W 	Se solicita contraseña
 
 -D "cn=Directory Manager" 	Usuario del LDAP
 
@@ -27,7 +27,7 @@ Estamos usando la clase posixAccount, para almacenar usuarios dentro de un direc
 ![](imagenes/3.png)
 
 ## 4.3 Comprobar los usuarios creados
-* //My maquina cliente tambien se llama servidor debido a que era la forma mas rapida de solucionar mi problema aunque por el tipo de fuente y la consoloa se puede apreciar que son maquinas distintas. 
+* //My maquina cliente tambien se llama servidor debido a que era la forma mas rapida de solucionar mi problema aunque por el tipo de fuente y la consoloa se puede apreciar que son maquinas distintas.
 * Ir a la MV cliente LDAP.
 * nmap -Pn IP-LDAP-SERVER, comprobar que el puerto LDAP del servidor está abierto. Si no aparecen los puertos abiertos, entonces revisar el cortafuegos.
 
