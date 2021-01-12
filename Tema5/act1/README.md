@@ -6,17 +6,21 @@
 
 + vagrant up, para iniciar una nueva instancia de la máquina.
 
+![](imagenes/3.png)
 + vagrant ssh: Conectar/entrar en nuestra máquina virtual usando SSH
 
+![](imagenes/4.png)
 ## 5.2 Comprobar
 
 Para confirmar que hay un servicio a la escucha en 4567, desde la máquina real podemos ejecutar los siguientes comandos:
 
-+ En el HOST-CON-VAGRANT (Máquina real). Comprobaremos que el puerto 4567 está a la escucha.
-
 + vagrant port para ver la redirección de puertos de la máquina Vagrant.
 
+![](imagenes/1.png)
+
 + En HOST-CON-VAGRANT, abrimos el navegador web con el URL http://127.0.0.1:4567. En realidad estamos accediendo al puerto 80 de nuestro sistema virtualizado.
+
+![](imagenes/2.png)
 
 ## 6.1 Proyecto Lakers
 
@@ -49,6 +53,8 @@ Incluir en el fichero de configuración Vagrantfile lo siguiente:
 
 
 + Para verificar que efectivamente el servidor Apache ha sido instalado e iniciado, abrimos navegador en la máquina real con URL http://127.0.0.1:4567.
+
+![](imagenes/5.png)
 
 ## 6.2 Proyecto Raptors (Suministro mediante Puppet)
 
@@ -83,7 +89,11 @@ Con la MV encendida
 
 + vagrant reload, recargar la configuración.
 
+![](imagenes/6.png)
+
 + vagrant provision, volver a ejecutar la provisión.
+
+![](imagenes/7.png)
 
 
 ## 7.2 Crear caja Vagrant
@@ -97,8 +107,12 @@ Una vez hemos preparado la máquina virtual ya podemos crear el box.
 + Nos aseguramos que la MV de VirtualBox VMNAME está apagada.
 vagrant package --base VMNAME --output nombre-alumnoXX.box, parar crear nuestra propia caja.
 
+
 + Comprobamos que se ha creado el fichero nombre-alumnoXX.box en el directorio donde hemos ejecutado el comando.
 
+![](imagenes/8.png)
 + vagrant box add nombre-alumno/bulls nombre-alumnoXX.box, añadimos la nueva caja creada por nosotros, al repositorio local de cajas vagrant de nuestra máquina.
 
 + vagrant box list, consultar ahora la lista de cajas Vagrant disponibles.
+
+![](imagenes/9.png)
