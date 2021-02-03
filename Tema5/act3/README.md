@@ -31,8 +31,8 @@ salt '*' state.show_highstate
 
 salt '*' state.apply apache, para aplicar el nuevo estado en todos los minions. OJO: Esta acción puede tardar un tiempo.
 
-![](/imagenes/4.png)
-![](/imagenes/5.png)
+![](imagenes/4.png)
+![](imagenes/5.png)
 
 
 ## 5.1 Crear estado "users"
@@ -44,14 +44,14 @@ salt '*' state.apply apache, para aplicar el nuevo estado en todos los minions. 
     + Grupo mazingerz
     + Usuarios kojiXX, drinfiernoXX dentro de dicho grupo.
 
-![](/imagenes/6.png)
+![](imagenes/6.png)
 
 + Aplicar el estado.
 
-![](/imagenes/7.png)
-![](/imagenes/8.png)
-![](/imagenes/9.png)
-![](/imagenes/10.png)
+![](imagenes/7.png)
+![](imagenes/8.png)
+![](imagenes/9.png)
+![](imagenes/10.png)
 
 ## 5.2 Crear estado "dirs"
 
@@ -60,5 +60,5 @@ salt '*' state.apply apache, para aplicar el nuevo estado en todos los minions. 
 
 * Aplicar el estado dirs.
 
-![](/imagenes/11.png)
-![](/imagenes/12.png)
+![](imagenes/11.png)
+![](imagenes/12.png)
