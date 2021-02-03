@@ -14,8 +14,8 @@ Desde el Máster comprobamos:
       salt '*' test.version
       minionXXg:
       3000
-![](/imagenes/2.png)
-![](/imagenes/3.png)
+![](imagenes/2.png)
+![](imagenes/3.png)
 
 # 4.5 Aplicar el nuevo estado
 
